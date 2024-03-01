@@ -677,7 +677,7 @@ authoryear,sectionbib,square,comma]{natbib}
 					\vspace{-8 pt}
 					\rule{\fulllength}{0.4pt}%
 %%%%%%%%%%  start   S P E C I A L   I S S U E      T I T L E   %%%%%%%%%%   
-\linebreak\raggedright{\sc Special Issue: ``Fundamental and Applied Aspects of Geology, Geophysics and Geoecology''}
+\linebreak\raggedright{\sc Special Issue: ``Special Issue Name''}
 %%%%%%%%%%  end   S P E C I A L   I S S U E      T I T L E   %%%%%%%%%%% 
 			}%
 		\par
