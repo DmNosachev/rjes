@@ -677,7 +677,7 @@ authoryear,sectionbib,square,comma]{natbib}
 					\vspace{-8 pt}
 					\rule{\fulllength}{0.4pt}%
 %%%%%%%%%%  start   S P E C I A L   I S S U E      T I T L E   %%%%%%%%%%   
-\linebreak\raggedright{\sc Special Issue: ``Special Issue Name''}
+\linebreak\raggedright{\sc Special Issue: ``25th anniversary of the Russian Journal of Earth Sciences''}
 %%%%%%%%%%  end   S P E C I A L   I S S U E      T I T L E   %%%%%%%%%%% 
 			}%
 		\par
