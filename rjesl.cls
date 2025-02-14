@@ -14,11 +14,14 @@
 
 %% INITIAL DECLARATIONS
 \LoadClass[10pt,a4paper]{article}
-%\RequirePackage{kpfonts-otf}
-%\RequirePackage[lining]{CormorantGaramond}
 \RequirePackage[lining]{ebgaramond}
 \RequirePackage[math-style=TeX]{unicode-math}
-\setmathfont{Garamond-Math}
+%\setmathfont{Garamond-Math} % слишком узкий греческий
+\RequirePackage[notext]{kpfonts-otf}
+
+\RequirePackage[russian, english]{babel}
+
+\RequirePackage{microtype}
 
 \RequirePackage{calc}
 \RequirePackage{indentfirst}
@@ -27,6 +30,7 @@
 \RequirePackage{lastpage}
 \RequirePackage{ifthen}
 \RequirePackage{float}
+\RequirePackage{placeins} % для \FloatBarrier
 \RequirePackage{amsmath}
 
 \RequirePackage[right,mathlines]{lineno}
@@ -49,7 +53,6 @@
 \RequirePackage{soul} % To highlight text
 \newcommand{\highlighting}[1]{\colorbox{yellow}{#1}}
 \RequirePackage{multirow}
-\RequirePackage{microtype} % For command \textls[]{}
 \RequirePackage{tikz} % For \foreach used for Orcid icon
 \RequirePackage{totcount} % To enable extracting the value of the counter "page" 
 \RequirePackage{changepage} % To adjust the width of the column for the title part and figures/tables (adjustwidth environment)
@@ -217,13 +220,28 @@
 % Библиография
 %*********************
 \RequirePackage[%
-backend=biber,
-language=autobib,
+backend=biber, 
+maxbibnames=3,
+maxnames=3,
+minnames=3,
+dropdates = false, 
+movenames=false,
+otherlangs=true,
 autolang=other,
-clearlang=true,
+sorting=nyt,
+bibstyle= gost-authoryear,
+citestyle=gost-authoryear,
+doi  = true,
+url = true,
+isbn = false,
+uniquename=false,
+uniquelist=false,
+ibidtracker=false,   %отключение ``там же''
+sortcites=true,
 maxcitenames=2,
-bibstyle=authoryear,
-citestyle=authoryear-comp,
+mincitenames=1,
+language=auto,
+autolang=other,
 ]{biblatex}
 
 \RequirePackage{csquotes}
@@ -232,8 +250,14 @@ citestyle=authoryear-comp,
 \AtEveryCite{\renewcommand{\mkbibnamefamily}[1]{\mkbibemph{#1}}}
 \AtBeginBibliography{\renewcommand{\mkbibnamefamily}[1]{#1}}
 
-% Запятая: автор, год
-\renewcommand*{\nameyeardelim}{\addcomma\space}
+% Запятая: автор, год для стандартного author-year
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+%меняет запятую на союз "и" при количестве авторов равным 2
+%\DeclareDelimFormat{finalnamedelim}{\addspace and\space} 
+\DeclareDelimFormat[parencite]{finalnamedelim}{%
+	\ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+	\addspace\textit{\bibstring{and}\addspace}}
 
 % Вначале выводим русскоязычныке источники по langid
 \DeclareSourcemap{
@@ -1552,7 +1576,7 @@ citestyle=authoryear-comp,
 
 \RequirePackage{wrapfig}
 
-\RequirePackage{subcaption}
+\RequirePackage[subrefformat=parens]{subcaption}
  
  
  
