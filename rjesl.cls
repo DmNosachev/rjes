@@ -14,10 +14,11 @@
 
 %% INITIAL DECLARATIONS
 \LoadClass[10pt,a4paper]{article}
-\RequirePackage[lining]{ebgaramond}
-\RequirePackage[math-style=TeX]{unicode-math}
+%\RequirePackage[lining]{ebgaramond}
+%\RequirePackage[math-style=TeX]{unicode-math}
 %\setmathfont{Garamond-Math} % слишком узкий греческий
-\RequirePackage[notext]{kpfonts-otf}
+%\RequirePackage[notext]{kpfonts-otf}
+\RequirePackage{kpfonts-otf}
 
 \RequirePackage[russian, english]{babel}
 
