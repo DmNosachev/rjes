@@ -1577,7 +1577,7 @@ autolang=other,
 
 \RequirePackage{wrapfig}
 
-\RequirePackage[subrefformat=parens]{subcaption}
+\RequirePackage{subcaption}
  
  
  
