@@ -379,7 +379,7 @@ autolang=other,
 		Vol.~\@pubvolume,%
 	}
 	\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
-		\@articlepages,
+		\@articlepages, EDN:~\@articleedn,
 	}{%
 		\@firstpage\ifnumcomp{\totvalue{page}-1}{=}{\@firstpage}{}{--\pageref*{LastPage}}, %
 	}
@@ -491,6 +491,8 @@ autolang=other,
 \newcommand{\issuenum}[1]{\gdef\@issuenum{\cutdigits{#1}}}
 \def\@articlepages{}
 \newcommand{\articlepages}[1]{\gdef\@articlepages{#1}}
+\def\@articleedn{}
+\newcommand{\articleedn}[1]{\gdef\@articleedn{#1}}
 \def\@firstnote{}
 \newcommand{\firstnote}[1]{\gdef\@firstnote{#1}}
 \def\@secondnote{}
@@ -654,7 +656,7 @@ autolang=other,
 					\vspace{-8 pt}
 					\rule{\fulllength}{0.4pt}%
 %%%%%%%%%%  start   S P E C I A L   I S S U E      T I T L E   %%%%%%%%%%   
-\linebreak\raggedright{\sc Special Issue: ``25th anniversary of the Russian Journal of Earth Sciences''}
+\linebreak\raggedright{\sc Special Issue: ``Data Science, Geoinformatics and Systems Analysis in Geosciences''}
 %%%%%%%%%%  end   S P E C I A L   I S S U E      T I T L E   %%%%%%%%%%% 
 			}%
 		\par
