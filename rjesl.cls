@@ -568,9 +568,9 @@ autolang=other,
 				\ifthenelse{\equal{\@status}{submit}}{%
 					Version {\@ \today} submitted to {\em \journalname}%
 					}{%
-					{\em \journalname} %
+					{\em \@journalshort} %
 					{\@pubyear}, %
-					Vol.~{\@pubvolume}, %
+					{\@pubvolume}, %
 					\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
 						\@articlepages%
 						}{%
@@ -591,7 +591,7 @@ autolang=other,
 			\ifthenelse{\equal{\@status}{submit}}{%
 				Version {\@ \today} submitted to {\em \journalname}%
 				}{%
-				{\em\journalname\ }{\@pubyear}, Vol.~{\@pubvolume}, %
+				{\em\@journalshort\ }{\@pubyear}, {\@pubvolume}, %
 				\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
 					\@articlepages, %
 					}{%
@@ -1342,7 +1342,7 @@ autolang=other,
 			Version {\@ \today} submitted to {\em \journalname}%
 			}{%
 			\ifthenelse{\equal{\@arttype}{Supfile}}{%
-			{\em \journalname} {\@pubyear}, Vol.~{\@pubvolume}, %
+			{\em \@journalshort} {\@pubyear}, {\@pubvolume}, %
 			\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
 				\@articlepages. %
 				}{%
@@ -1381,7 +1381,7 @@ autolang=other,
 \lfoot{%
 	\fontsize{8}{8}\selectfont
 	
-	{	\null\vspace{-1.5pc} \em\journalname\ }{\@pubyear}, Vol.~{\@pubvolume}, %
+	{	\null\vspace{-1.5pc} \em\@journalshort\ }{\@pubyear}, {\@pubvolume}, %
 	\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
 		\@articlepages, %
 	}{%
