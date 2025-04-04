@@ -34,6 +34,12 @@
 \RequirePackage{placeins} % для \FloatBarrier
 \RequirePackage{amsmath}
 
+% прямые начертания для констант, i и d
+\def\eu{\ensuremath{\mathrm{e}}}
+\def\iu{\ensuremath{\mathrm{i}}}
+\def\du{\ensuremath{\mathrm{d}}}
+
+
 \RequirePackage[right,mathlines]{lineno}
 \RequirePackage{setspace}
 \RequirePackage{enumitem}
