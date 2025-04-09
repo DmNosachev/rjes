@@ -232,24 +232,34 @@ maxbibnames=3,
 maxnames=3,
 minnames=3,
 dropdates = false, 
-movenames=false,
+movenames=false, %перемещение имён в область сведений об ответственности
 otherlangs=true,
 autolang=other,
-sorting=nyt,
-bibstyle= gost-authoryear,
-citestyle=gost-authoryear,
+language=auto,
+style= gost-authoryear,
 doi  = true,
 url = true,
 isbn = false,
-uniquename=false,
-uniquelist=false,
+%uniquename=false,
+%uniquelist=false,
 ibidtracker=false,   %отключение ``там же''
-sortcites=true,
 maxcitenames=2,
-mincitenames=1,
-language=auto,
-autolang=other,
+mincitenames=1
 ]{biblatex}
+
+% убрать месяц
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+\AtEveryBibitem{\clearfield{labelmonth}}
+
+% сортировка nyt по первому автору (https://tex.stackexchange.com/questions/203185/order-by-first-author-only-not-all-names-than-by-year-or-sort-by-a-partial-ent)
+\DeclareStyleSourcemap{
+    \maps[datatype=bibtex]{
+      \map{
+        \step[fieldsource=author, match=\regexp{([^,]+),\s+(.).*?\sand}, final]
+        \step[fieldset=sortname, fieldvalue=$1, final]  }
+	}
+}
 
 % et al
 
@@ -262,7 +272,7 @@ autolang=other,
  {\ifnumgreater{\value{liststop}}{1}
   {\finalandcomma}
   {}%
-  \andothersdelim\emph{\bibstring[\emph]{andothers}}}
+  \andothersdelim\textit{\bibstring[\textit]{andothers}}}
  {}}
 
 \RequirePackage{csquotes}
@@ -396,7 +406,7 @@ autolang=other,
 		(\@pubyear), %
 		\@TitleCitation, % Remove period if title ends with ? or ! or ...
 		\textit{\@journalfull}, %		
-		Vol.~\@pubvolume,%
+		%Vol.~\@pubvolume,%
 	}
 	\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
 		\@articlepages, EDN:~\@articleedn,
