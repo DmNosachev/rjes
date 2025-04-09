@@ -251,6 +251,20 @@ language=auto,
 autolang=other,
 ]{biblatex}
 
+% et al
+
+\renewbibmacro*{name:andothers}{%
+ \ifboolexpr{
+  test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+  and
+  test \ifmorenames
+ }
+ {\ifnumgreater{\value{liststop}}{1}
+  {\finalandcomma}
+  {}%
+  \andothersdelim\emph{\bibstring[\emph]{andothers}}}
+ {}}
+
 \RequirePackage{csquotes}
 
 % Фамилия курсивом в цитатах и прямым в списке для authoryear
