@@ -229,8 +229,10 @@
 \RequirePackage[%
 backend=biber, 
 maxbibnames=3,
+maxsortnames=1,
 maxnames=3,
 minnames=3,
+mincitenames=1,
 dropdates = false, 
 movenames=false, %перемещение имён в область сведений об ответственности
 otherlangs=true,
@@ -240,11 +242,9 @@ style= gost-authoryear,
 doi  = true,
 url = true,
 isbn = false,
-%uniquename=false,
-%uniquelist=false,
-ibidtracker=false,   %отключение ``там же''
-maxcitenames=2,
-mincitenames=1
+uniquename=false,
+uniquelist=false,
+ibidtracker=false   %отключение ``там же''
 ]{biblatex}
 
 % убрать месяц
@@ -406,7 +406,8 @@ mincitenames=1
 		(\@pubyear), %
 		\@TitleCitation, % Remove period if title ends with ? or ! or ...
 		\textit{\@journalfull}, %		
-		%Vol.~\@pubvolume,%
+		%Vol.
+		\@pubvolume,%
 	}
 	\ifthenelse{\equal{\@continuouspages}{\@empty}}{%
 		\@articlepages, EDN:~\@articleedn,
