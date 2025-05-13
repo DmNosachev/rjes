@@ -229,9 +229,9 @@
 \RequirePackage[%
 backend=biber, 
 maxbibnames=3,
-maxsortnames=1,
-maxnames=3,
-minnames=3,
+minbibnames=3,
+%maxsortnames=1,
+maxcitenames=1,
 mincitenames=1,
 dropdates = false, 
 movenames=false, %перемещение имён в область сведений об ответственности
