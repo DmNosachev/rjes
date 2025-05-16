@@ -49,7 +49,7 @@
 \DeclareSIUnit[quantity-product = ]\percent{\char`\%}
 \sisetup{range-units = single, range-phrase= \text{--}, per-mode=symbol, group-separator = {,}, group-minimum-digits = 5}%
 
-
+\RequirePackage{luacolor, lua-ul}
 
 
 \RequirePackage{booktabs} % For \toprule etc. in tables
